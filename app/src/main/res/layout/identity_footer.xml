@@ -1,0 +1,6 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvIdentity" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:padding="12dp"
+    android:background="#E5EFEA" android:textColor="#244D43" android:textSize="14sp"
+    android:text="姓名：季院升　学号：2406100309
+班级：计算机241" />
