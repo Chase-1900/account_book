@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">校园记账本</string>
-    <!-- 本人身份信息静态写在以下三项中。它们是编译进程序的常量，运行时没有修改入口。 -->
+    <!-- 固定的姓名、学号和班级。 -->
     <string name="student_name">季院升</string>
     <string name="student_id">2406100309</string>
     <string name="student_class">计算机241</string>

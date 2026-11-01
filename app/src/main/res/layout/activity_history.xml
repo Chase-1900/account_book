@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <include layout="@layout/identity_footer" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" android:padding="20dp">
+        <TextView style="@style/PageTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="我的收支记录" />
+        <TextView android:id="@+id/tvSummary" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/card_bg" android:textSize="16sp" android:textColor="#163F38" android:lineSpacingExtra="5dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="点击记录查看详情" android:paddingTop="12dp" android:paddingBottom="8dp" android:textColor="#64766E"/>
+        <!-- ListView 用剩余高度显示列表，不嵌套在 ScrollView 中。 -->
+        <ListView android:id="@+id/lvRecords" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:divider="#DFE9E5" android:dividerHeight="1dp" />
+        <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center" android:text="暂无记录，先添加一笔吧" android:textSize="17sp" android:textColor="#64766E" android:visibility="gone"/>
+        <Button android:id="@+id/btnAdd" style="@style/ActionButton" android:text="返回记账"/>
+    </LinearLayout>
+</LinearLayout>

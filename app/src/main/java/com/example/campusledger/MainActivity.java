@@ -29,6 +29,14 @@ public class MainActivity extends Activity {
         // RadioGroup 保证收入、支出只能选一个，选项变化时更新分类。
         typeGroup.setOnCheckedChangeListener((group, checkedId) -> updateCategories());
         findViewById(R.id.btnPreview).setOnClickListener(v -> preview());
+        findViewById(R.id.btnHistory).setOnClickListener(v ->
+                startActivity(new Intent(this, HistoryActivity.class)));
+        // 系统旋转屏幕后，Spinner 的位置需要在设置适配器后恢复。
+        if (savedInstanceState != null) {
+            typeGroup.check(savedInstanceState.getInt("typeId", R.id.rbExpense));
+            updateCategories();
+            categorySpinner.setSelection(savedInstanceState.getInt("categoryIndex", 0));
+        }
     }
 
     private void updateCategories() {
@@ -61,7 +69,14 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    // 三个页面调用同一方法显示固定身份；没有 EditText 或运行时修改入口。
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("typeId", typeGroup.getCheckedRadioButtonId());
+        outState.putInt("categoryIndex", categorySpinner.getSelectedItemPosition());
+        super.onSaveInstanceState(outState);
+    }
+
+    // 显示固定的姓名、学号和班级。
     public static void showIdentity(Activity activity) {
         TextView view = activity.findViewById(R.id.tvIdentity);
         view.setText(activity.getString(R.string.identity_line,

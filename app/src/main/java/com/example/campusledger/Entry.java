@@ -2,7 +2,7 @@ package com.example.campusledger;
 
 import android.content.Intent;
 
-/** 一条收支记录。字段少，直接使用普通 Java 类，方便理解。 */
+/** 保存一条收支记录的数据。 */
 public class Entry {
     public String type, category, note, time;
     public long cents;

@@ -4,9 +4,10 @@
     <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
             <TextView android:id="@+id/tvTitle" style="@style/PageTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="确认本次记录" />
-            <TextView android:id="@+id/tvHint" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="通过 Intent 接收本次填写的数据" android:layout_marginBottom="20dp" android:textColor="#64766E"/>
+            <TextView android:id="@+id/tvHint" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="核对金额和分类后保存" android:layout_marginBottom="20dp" android:textColor="#64766E"/>
             <TextView android:id="@+id/tvAmount" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="36sp" android:textStyle="bold" android:textColor="#177C6B" android:padding="16dp" android:background="@drawable/card_bg" />
             <TextView android:id="@+id/tvDetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:padding="16dp" android:background="@drawable/card_bg" android:textSize="18sp" android:textColor="#263C36" android:lineSpacingExtra="12dp"/>
+            <Button android:id="@+id/btnSave" style="@style/ActionButton" android:layout_marginTop="24dp" android:text="确认保存" />
             <Button android:id="@+id/btnBack" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="返回修改"/>
         </LinearLayout>
     </ScrollView>

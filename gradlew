@@ -1,5 +1,5 @@
 #!/bin/sh
-# 使用 Gradle Wrapper 启动工程；优先使用 JAVA_HOME 中的 JDK。
+# 启动 Gradle Wrapper。
 APP_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 if [ -n "$JAVA_HOME" ]; then
     JAVA_CMD="$JAVA_HOME/bin/java"

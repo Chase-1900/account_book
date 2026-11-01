@@ -22,6 +22,7 @@
                 <EditText android:id="@+id/etNote" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="top" android:inputType="textMultiLine" android:maxLength="80" android:hint="例如 和同学一起吃午饭"/>
             </LinearLayout>
             <Button android:id="@+id/btnPreview" style="@style/ActionButton" android:layout_marginTop="16dp" android:text="下一步  查看详情" />
+            <Button android:id="@+id/btnHistory" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="查看历史记录" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
