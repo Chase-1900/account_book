@@ -2,9 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
     <include layout="@layout/identity_footer" />
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-        <TextView style="@style/PageTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="校园记账本" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="记录生活费收入和日常支出" android:textSize="18sp" />
-        <Button android:id="@+id/btnStart" style="@style/ActionButton" android:layout_marginTop="20dp" android:text="开始了解项目" />
-    </LinearLayout>
+    <!-- 表单放进 ScrollView，小屏幕和键盘弹出时仍可以上下滚动。 -->
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView style="@style/PageTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="校园记账本" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="记录每一笔收支，让生活费心中有数" android:textColor="#64766E" android:layout_marginBottom="16dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/card_bg">
+                <TextView style="@style/FieldLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="收支类型"/>
+                <RadioGroup android:id="@+id/rgType" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:checkedButton="@id/rbExpense">
+                    <RadioButton android:id="@+id/rbExpense" android:layout_width="wrap_content" android:layout_height="48dp" android:text="支出"/>
+                    <RadioButton android:id="@+id/rbIncome" android:layout_width="wrap_content" android:layout_height="48dp" android:layout_marginStart="24dp" android:text="收入"/>
+                </RadioGroup>
+                <TextView style="@style/FieldLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="金额（元）" android:labelFor="@id/etAmount" />
+                <EditText android:id="@+id/etAmount" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:inputType="numberDecimal" android:singleLine="true" android:maxLength="12" android:hint="例如 18.50" android:textSize="22sp"/>
+                <TextView style="@style/FieldLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="收支分类" android:labelFor="@id/spCategory"/>
+                <Spinner android:id="@+id/spCategory" android:layout_width="match_parent" android:layout_height="48dp" android:spinnerMode="dropdown" android:contentDescription="选择收支分类" />
+                <CheckBox android:id="@+id/cbImportant" android:layout_width="match_parent" android:layout_height="48dp" android:text="标记为重要记录" android:layout_marginTop="8dp" />
+                <TextView style="@style/FieldLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="备注（选填）" android:labelFor="@id/etNote"/>
+                <EditText android:id="@+id/etNote" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="top" android:inputType="textMultiLine" android:maxLength="80" android:hint="例如 和同学一起吃午饭"/>
+            </LinearLayout>
+            <Button android:id="@+id/btnPreview" style="@style/ActionButton" android:layout_marginTop="16dp" android:text="下一步  查看详情" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
